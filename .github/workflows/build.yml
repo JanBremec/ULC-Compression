@@ -1,0 +1,53 @@
+name: Build ULC Suite
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Setup MinGW
+      uses: egor-tensin/setup-mingw@v2
+      with:
+        platform: x64
+    
+    - name: Build All Variants
+      run: |
+        cd scripts
+        .\build_all.bat
+    
+    - name: Upload Artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: ulc-windows-binaries
+        path: |
+          ulc-c/ulc.exe
+          ulc-ultra/ulc-ultra.exe
+          ulc-hyper/ulc-hyper.exe
+          ulc-unified/ulc-auto.exe
+  
+  test:
+    runs-on: windows-latest
+    needs: build-windows
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Download Artifacts
+      uses: actions/download-artifact@v3
+      with:
+        name: ulc-windows-binaries
+    
+    - name: Run Basic Tests
+      run: |
+        # Test ULC-Unified
+        ulc-unified/ulc-auto.exe compress benchmarks/data/apache.log -o test.ulc
+        ulc-unified/ulc-auto.exe decompress test.ulc -o test_restored.log
+        fc /b benchmarks/data/apache.log test_restored.log

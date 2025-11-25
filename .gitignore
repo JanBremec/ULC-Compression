@@ -1,0 +1,61 @@
+# Binaries
+*.exe
+*.o
+*.obj
+*.dll
+*.so
+*.dylib
+*.a
+*.lib
+
+# Compressed files
+*.ulc
+*.ulcu
+*.ulch
+*.gz
+*.bz2
+*.xz
+*.zip
+*.tar
+
+# Test outputs
+*.decompressed
+*.restored
+temp_*
+debug_*
+test_*.ulc
+test_*.ulcu
+test_*.ulch
+
+# Build artifacts
+build/
+bin/
+*.pdb
+*.ilk
+*.exp
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+*.egg-info/
+dist/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Logs
+*.log
+
+# OS
+Thumbs.db
+.DS_Store

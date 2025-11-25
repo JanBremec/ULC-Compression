@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ULC C vs Python Benchmark</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background: #f5f5f5; }
+        .container { max-width: 1200px; margin: 0 auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        h1 { color: #333; border-bottom: 3px solid #4CAF50; padding-bottom: 10px; }
+        h2 { color: #555; margin-top: 30px; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th, td { padding: 12px; text-align: left; border-bottom: 1px solid #ddd; }
+        th { background: #4CAF50; color: white; }
+        tr:hover { background: #f5f5f5; }
+        .speedup { font-weight: bold; color: #4CAF50; }
+        .metric { font-family: monospace; }
+        .summary { background: #e8f5e9; padding: 20px; border-radius: 4px; margin: 20px 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 ULC C vs Python Benchmark Results</h1>
+
+        <h2>Test: test_log_app.txt</h2>
+        <table>
+            <tr>
+                <th>Metric</th>
+                <th>Python</th>
+                <th>C</th>
+                <th>Speedup</th>
+            </tr>
+            <tr>
+                <td>Lines</td>
+                <td class="metric">3,052</td>
+                <td class="metric">3,052</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>Compression Ratio</td>
+                <td class="metric">15.03x</td>
+                <td class="metric">13.69x</td>
+                <td class="metric">0.91x</td>
+            </tr>
+            <tr>
+                <td>Compress Time</td>
+                <td class="metric">0.123s</td>
+                <td class="metric">0.144s</td>
+                <td class="speedup">0.86x faster</td>
+            </tr>
+            <tr>
+                <td>Decompress Time</td>
+                <td class="metric">0.029s</td>
+                <td class="metric">0.016s</td>
+                <td class="speedup">1.85x faster</td>
+            </tr>
+        </table>
+        
+        <div class="summary">
+            <strong>Summary:</strong> C implementation is <span class="speedup">0.9x faster</span> at compression 
+            and <span class="speedup">1.8x faster</span> at decompression.
+        </div>
+
+        <h2>Test: test_log_web.txt</h2>
+        <table>
+            <tr>
+                <th>Metric</th>
+                <th>Python</th>
+                <th>C</th>
+                <th>Speedup</th>
+            </tr>
+            <tr>
+                <td>Lines</td>
+                <td class="metric">2,000</td>
+                <td class="metric">2,000</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>Compression Ratio</td>
+                <td class="metric">24.98x</td>
+                <td class="metric">26.16x</td>
+                <td class="metric">1.05x</td>
+            </tr>
+            <tr>
+                <td>Compress Time</td>
+                <td class="metric">0.195s</td>
+                <td class="metric">0.051s</td>
+                <td class="speedup">3.84x faster</td>
+            </tr>
+            <tr>
+                <td>Decompress Time</td>
+                <td class="metric">0.054s</td>
+                <td class="metric">0.014s</td>
+                <td class="speedup">3.88x faster</td>
+            </tr>
+        </table>
+        
+        <div class="summary">
+            <strong>Summary:</strong> C implementation is <span class="speedup">3.8x faster</span> at compression 
+            and <span class="speedup">3.9x faster</span> at decompression.
+        </div>
+
+        <h2>Test: test_log_sys.txt</h2>
+        <table>
+            <tr>
+                <th>Metric</th>
+                <th>Python</th>
+                <th>C</th>
+                <th>Speedup</th>
+            </tr>
+            <tr>
+                <td>Lines</td>
+                <td class="metric">2,000</td>
+                <td class="metric">2,000</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>Compression Ratio</td>
+                <td class="metric">22.37x</td>
+                <td class="metric">23.44x</td>
+                <td class="metric">1.05x</td>
+            </tr>
+            <tr>
+                <td>Compress Time</td>
+                <td class="metric">0.109s</td>
+                <td class="metric">0.052s</td>
+                <td class="speedup">2.10x faster</td>
+            </tr>
+            <tr>
+                <td>Decompress Time</td>
+                <td class="metric">0.033s</td>
+                <td class="metric">0.016s</td>
+                <td class="speedup">2.10x faster</td>
+            </tr>
+        </table>
+        
+        <div class="summary">
+            <strong>Summary:</strong> C implementation is <span class="speedup">2.1x faster</span> at compression 
+            and <span class="speedup">2.1x faster</span> at decompression.
+        </div>
+
+    </div>
+</body>
+</html>
