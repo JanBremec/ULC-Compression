@@ -23,8 +23,8 @@ brew install xz
 
 ```bash
 # Clone repository
-git clone https://github.com/[username]/ulc.git
-cd ulc
+git clone https://github.com/JanBremec/ULC-Compression.git
+cd ULC-Compression
 
 # Build all variants
 cd scripts
@@ -362,8 +362,8 @@ A: Current version works best on space-delimited logs. JSON support is planned f
 ## Support
 
 For issues and questions:
-- GitHub Issues: https://github.com/[username]/ulc/issues
-- Documentation: https://github.com/[username]/ulc/docs
+- GitHub Issues: https://github.com/JanBremec/ulc/issues
+- Documentation: https://github.com/JanBremec/ulc/docs
 
 ## Contributing
 
