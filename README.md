@@ -80,7 +80,7 @@ ulc-auto.exe decompress compressed.ulc -o restored.log
 ```bash
 # Clone the repository
 git clone https://github.com/JanBremec/ULC-Compression.git
-cd ulc
+cd ULC-Compression
 
 # Build all variants
 cd scripts
